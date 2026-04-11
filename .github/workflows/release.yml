@@ -64,13 +64,13 @@ jobs:
             bump="major"
           elif echo "$commits" | grep -qiE "^feat(\(.+\))?:"; then
             bump="minor"
-          elif echo "$commits" | grep -qiE "^fix(\(.+\))?:|^perf(\(.+\))?:|^refactor(\(.+\))?:"; then
+          elif echo "$commits" | grep -qiE "^fix(\(.+\))?:|^perf(\(.+\))?:|^refactor(\(.+\))?:|^build(\(.+\))?:"; then
             bump="patch"
           fi
 
           if [ "$bump" = "none" ]; then
             echo "skip=true" >> $GITHUB_OUTPUT
-            echo "No version bump needed (no feat/fix commits)"
+            echo "No version bump needed (no feat/fix/build commits)"
             exit 0
           fi
 
@@ -122,9 +122,10 @@ jobs:
 
           features=$(echo "$commits" | grep -iE "^- feat" || true)
           fixes=$(echo "$commits" | grep -iE "^- fix" || true)
+          builds=$(echo "$commits" | grep -iE "^- build" || true)
           refactors=$(echo "$commits" | grep -iE "^- refactor" || true)
           tests=$(echo "$commits" | grep -iE "^- test" || true)
-          others=$(echo "$commits" | grep -viE "^- (feat|fix|refactor|test|chore|docs|style|ci)" || true)
+          others=$(echo "$commits" | grep -viE "^- (feat|fix|build|refactor|test|chore|docs|style|ci)" || true)
 
           changelog=""
 
@@ -134,6 +135,10 @@ jobs:
 
           if [ -n "$fixes" ]; then
             changelog="${changelog}### Bug Fixes\n${fixes}\n\n"
+          fi
+
+          if [ -n "$builds" ]; then
+            changelog="${changelog}### Build\n${builds}\n\n"
           fi
 
           if [ -n "$refactors" ]; then
