@@ -1,54 +1,41 @@
-# Qt UI Compiler
+[update-readmes]   Mode: rewrite — migrating to template structure...
+# qt-ui-compiler
 
-[![JetBrains Plugins](https://img.shields.io/jetbrains/plugin/v/29493.svg)](https://plugins.jetbrains.com/plugin/29493-qt-ui-compiler)
-[![JetBrains Plugins](https://img.shields.io/jetbrains/plugin/d/29493.svg)](https://plugins.jetbrains.com/plugin/29493-qt-ui-compiler)
-[![JetBrains Plugins](https://img.shields.io/jetbrains/plugin/r/rating/29493.svg)](https://plugins.jetbrains.com/plugin/29493-qt-ui-compiler)
+[![Built with Ona](https://ona.com/build-with-ona.svg)](https://app.ona.com/#https://github.com/Interested-Deving-1896/qt-ui-compiler)
 
-Automated conversion of Qt Designer `.ui` files for IntelliJ-based IDEs.
+<!-- AI:start:what-it-does -->
+_Description pending._
+<!-- AI:end:what-it-does -->
 
-## Overview
+## Architecture
 
-The **Qt UI Compiler** is an extension that automates the generation of code from Qt Designer XML user interface files. It ensures that the visual design remains synchronized with the implementation by monitoring changes and invoking the appropriate compilation tools automatically.
+<!-- AI:start:architecture -->
+_Architecture documentation pending._
+<!-- AI:end:architecture -->
 
-### Supported Frameworks
+## Install
 
-| Framework | Executable | Output |
-|-----------|------------|--------|
-| **PyQt6** | `pyuic6` | Python |
-| **PySide6** | `pyside6-uic` | Python |
-| **PyQt5** | `pyuic5` | Python |
-| **PySide2** | `pyside2-uic` | Python |
-| **Native Qt** | `uic` | C++ headers |
+<!-- Add installation instructions here. This section is yours — the AI will not modify it. -->
 
-### Supported IDEs
+```bash
+git clone https://github.com/Interested-Deving-1896/qt-ui-compiler.git
+cd qt-ui-compiler
+```
 
-Works with all JetBrains IDEs:
-- **PyCharm** (Community & Professional)
-- **IntelliJ IDEA** (Community & Ultimate)
-- **CLion**
-- **WebStorm**
-- **Rider**
-- And other IntelliJ-based IDEs
+## Usage
 
-## Features
 
-- **Automatic Compilation:** Detects modifications in `.ui` files and generates the corresponding output files instantly upon saving.
-- **Manual Execution:** Provides context menu actions and keyboard shortcuts (`Ctrl+Alt+U`) for on-demand compilation.
-- **Environment Awareness:** Supports virtual environments (`venv`) and custom executable paths.
-- **Flexible Configuration:** Offers glob pattern filtering for targeted file monitoring and customizable output paths.
-- **Auto-Detection:** Automatically finds the appropriate UIC executable in your virtual environment or system PATH.
-- **I18n Support:** Fully internationalized interface and notifications.
-- **Cross-Platform:** Compatible with Windows, macOS, and Linux.
+1. Configure the environment and compilation settings (or use auto-detection).
+2. The plugin will monitor files matching the defined pattern.
+3. Upon saving a `.ui` file, the corresponding output file is generated or updated.
+4. Alternatively, right-click a `.ui` file in the **Project View** or **Editor** and select **Compile UI File**.
 
-## Installation
+### For CLion / C++ Users
 
-The plugin can be installed via the JetBrains Marketplace within any compatible IDE:
-
-1. Navigate to **Settings/Preferences | Plugins**.
-2. Search for **Qt UI Compiler**.
-3. Click **Install**.
+If you're using Qt with C++, the plugin will automatically detect the native `uic` executable in your PATH. Make sure Qt's bin directory is in your system PATH, or configure a custom UIC path in the settings.
 
 ## Configuration
+
 
 Settings are located under **Settings/Preferences | Tools | Qt UI Compiler**.
 
@@ -64,39 +51,46 @@ Settings are located under **Settings/Preferences | Tools | Qt UI Compiler**.
 - **UI Files Filter:** Use glob patterns (e.g., `**/ui/*.ui`) to define which files the plugin should process (default: `*.ui`).
 - **Output Path/Pattern:** Define where the generated files should be stored. Use `$1` as a placeholder for the original filename.
 
-## Usage
+## CI
 
-1. Configure the environment and compilation settings (or use auto-detection).
-2. The plugin will monitor files matching the defined pattern.
-3. Upon saving a `.ui` file, the corresponding output file is generated or updated.
-4. Alternatively, right-click a `.ui` file in the **Project View** or **Editor** and select **Compile UI File**.
+<!-- AI:start:ci -->
+_CI documentation pending._
+<!-- AI:end:ci -->
 
-### For CLion / C++ Users
+## Mirror chain
 
-If you're using Qt with C++, the plugin will automatically detect the native `uic` executable in your PATH. Make sure Qt's bin directory is in your system PATH, or configure a custom UIC path in the settings.
+<!-- AI:start:mirror-chain -->
+This repo is maintained in [`Interested-Deving-1896/qt-ui-compiler`](https://github.com/Interested-Deving-1896/qt-ui-compiler) and mirrored through:
 
-## Building from Source
-
-### Prerequisites
-
-- Java 17
-- Gradle (provided via wrapper)
-
-### Build Steps
-
-To build the plugin distribution:
-```bash
-./gradlew buildPlugin
+```
+Interested-Deving-1896/qt-ui-compiler  ──►  OpenOS-Project-OSP/qt-ui-compiler  ──►  OpenOS-Project-Ecosystem-OOC/qt-ui-compiler
 ```
 
-The resulting ZIP file will be located in `build/distributions/`.
+Changes flow downstream automatically via the hourly mirror chain in
+[`fork-sync-all`](https://github.com/Interested-Deving-1896/fork-sync-all).
+Direct commits to OSP or OOC are detected and opened as PRs back to `Interested-Deving-1896`.
+<!-- AI:end:mirror-chain -->
 
-### Running Tests
+## Contributors
 
-```bash
-./gradlew test
-```
+<!-- AI:start:contributors -->
+_Contributors pending._
+<!-- AI:end:contributors -->
+
+## Origins
+
+<!-- AI:start:origins -->
+_Original project — no upstream fork._
+<!-- AI:end:origins -->
+
+## Resources
+
+<!-- AI:start:resources -->
+_No additional resource files found._
+<!-- AI:end:resources -->
 
 ## License
 
-This project is licensed under the terms specified in the [LICENSE](LICENSE) file.
+<!-- AI:start:license -->
+<!-- License not detected — add a LICENSE file to this repo. -->
+<!-- AI:end:license -->
